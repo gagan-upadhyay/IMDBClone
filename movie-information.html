@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" type="image/png" href="logo.png">    
+    <link rel="stylesheet" href="style.css">
+
+    
+
+
+</head>
+<body>
+    <div class="outer-container">
+        <div class="logo">
+            <div class="container nav-bar">
+                <a href="index.html" id="logo"><img src="logo.png" alt="IMDb"></a>
+                <a href="favourite.html" id="fav">Favourites</a>
+            </div>
+        </div>
+    <div class="search-container">
+        <div class="search-element">
+            <input type="text" class="form-control" placeholder="Enter Movie Title..." id="movie-searchbox">            
+            <!-- <button class="search-btn">Search</button> -->
+            
+        </div>
+        
+    </div>
+    </div>
+    <div id="search-list" class="search-list"></div>
+
+    
+    <div class="display-search-container">
+        <div class="search-image">
+            <img src="samplePoster.jpg" alt=Poster>
+        </div>
+        <div class="search-info">
+            <p id="title" style="font-size:xx-large;"><strong>Title</strong></p> <br>           
+            <p id="type"  > <strong>Type</strong></p><br>
+            <p id="genre" ><strong>Genre </strong></p><br>
+            <p id="year"><strong>Year</strong></p><br>
+            <p id="cast"><strong>cast</strong></p><br>
+            <p id="director"><strong>director</strong></p><br>
+            <p id="plot">Plot</p><br>
+            <p id="imdb-rating">imdb rating</p><br>
+            <p id="rottentomatoes-rating">Rotten tomatoes rating</p><br>
+            <p id="Metacritic-Rating">meta critic rating</p><br>
+        </div>
+        <div><i class="fa-regular fav-btn fa-heart" style="cursor: pointer;"></i></div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="movie-info.js"></script>
+    <script src="https://kit.fontawesome.com/72b5f2aac8.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
