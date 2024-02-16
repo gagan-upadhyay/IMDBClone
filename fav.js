@@ -2,7 +2,21 @@
 const favArray = JSON.parse(localStorage.getItem('favoriteArray'));
 const favMovieElement=document.querySelector('.display-favourite-container');
 
-// Step 3: Loop through the array and access each object
+const updateLocalStorage = (updatedArray) => {
+    localStorage.setItem('favoriteArray', JSON.stringify(updatedArray));
+};
+
+const removeFromFavorites=(movieElement, movie)=>{
+    const index =favArray.findIndex((favMovie)=>favMovie.imdbID===movie.imdbID);
+    if(index!==-1){
+        favArray.splice(index,1); //removing clicked movie
+        updateLocalStorage(favArray); //updating local storage after removing movie
+        console.log("movie " + movie.Title+ " is removed form fav");
+        movieElement.remove(); //removing movieElement from UI
+    }
+};
+
+
 if (favArray && favArray.length > 0) {    
     favArray.forEach((movie) => {
         const movieElement = document.createElement('div');
@@ -10,49 +24,39 @@ if (favArray && favArray.length > 0) {
 
         movieElement.innerHTML = `            
             <div class='poster-image'>
-                <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'samplePoster.jpg'}" alt="Movie Poster"> 
-                
+                <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'samplePoster.jpg'}" alt="Movie Poster">                
             </div>            
             <div class='movie-info'>
-            <div>
-                <i class="fa-solid favbtn fa-heart"></i>
-                <p id="cast"><strong>Cast: ${movie.Actors}</strong></p><br>
-                <p id="year"><strong>Year: ${movie.Year}</strong></p><br>
-                <p id="imdb-rating">IMDb Rating: ${movie.imdbRating}</p><br>
-            </div>
-            </div>
-            
-        `;
+                <div>
+                    <i class="fa-solid favbtn fa-heart"></i>
+                    <p><strong>${movie.Plot}</strong></p><br>
+                    <p><strong>Cast: ${movie.Actors}</strong></p><br>
+                    <p><strong>Year: ${movie.Year}</strong></p><br>
+                    <p><strong>IMDb Rating: ${movie.imdbRating}</strong></p><br>
+                    <p><strong>Runtime: ${movie.Runtime}</strong></p><br>                    
+                </div>
+            </div>            
+        `;       
         
+        const favbtn = movieElement.querySelector('.favbtn');
+        favbtn.addEventListener('click', function(){
+            removeFromFavorites(movieElement, movie);
+            location.reload();
+        });
         favMovieElement.appendChild(movieElement);
     });
-} else {
-    console.log('favArray is either empty or not available in local storage.');
-}
-
-
-// *********Handling the fav btn on the favourite screen************
-
-const fbtn=document.querySelector('.favbtn');
-
-document.querySelector('.movie-info').onmouseover=function(){
-    
-}
-
+} 
+else {
+        console.log('favArray is either empty or not available in local storage.');
+        let movieElement = document.createElement('div');
+        movieElement.classList.add('nofav');
+        movieElement.innerHTML=`    
+        <h3>404! No favourite Movies found!<h3>
+        `
+        favMovieElement.appendChild(movieElement);
+    }
 
 
 
 
-
-fbtn.addEventListener('click', function(){
-    
-    let favourites=JSON.parse(localStorage.getItem('favoriteArray'));
-    // const selectedMovie=movie.Title;
-    // console.log(selectedMovie);
-
-    const index = favourites.findIndex(movie => JSON.stringify(movie) === JSON.stringify(movieInfo));
-    favArray.splice(index, 1);
-    console.log("Movie "+ movieInfo.Title + " removed to favorites");    
-
-});
 

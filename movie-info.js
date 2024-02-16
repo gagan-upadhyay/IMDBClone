@@ -73,7 +73,7 @@ function displaysearched(movieInfo) {
     }
     //*****************************************************
     //replacing elements with details.
-    titleElement.textContent = `Title: ${movieInfo.Title}`;
+    titleElement.textContent = `${movieInfo.Title}`;
     typeElement.textContent = `Type: ${movieInfo.Type}`;
     genreElement.textContent = `Genre: ${movieInfo.Genre}`;
     yearElement.textContent = `Year: ${movieInfo.Year}`;
