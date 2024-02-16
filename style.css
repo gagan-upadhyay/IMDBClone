@@ -156,7 +156,6 @@ input:focus{outline:2px solid rgb(127, 123, 123);border-radius:10px; box-shadow:
     border-radius: 10px;
     border-color: #333333;
     border-style:ridge;
-    width:95vw;
     height:70vh;
     margin-left: 2vw;
     background-color: grey;

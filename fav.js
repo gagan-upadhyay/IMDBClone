@@ -50,6 +50,7 @@ else {
         console.log('favArray is either empty or not available in local storage.');
         let movieElement = document.createElement('div');
         movieElement.classList.add('nofav');
+        favMovieElement.style.width='95vw';
         movieElement.innerHTML=`    
         <h3>404! No favourite Movies found!<h3>
         `
