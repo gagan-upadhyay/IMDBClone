@@ -2,10 +2,6 @@ body{
     padding: 0;
     margin: 0;
     background-color: black;
-    background-image: "src/movietheatre.jpg";
-    overflow: hidden;
-    scrollbar-width: none;
-
 }
 
 .outer-container{
@@ -18,10 +14,17 @@ body{
     width: 6vw;
 }
 
+img{
+    margin: 2vh;
+    height:10vh;
+    width: 6vw;
+}
+
 .movietheatre img{
     position:relative;   
     margin-left: 30vw; 
     width:43vw; 
+    height: 80vh;
     user-select: none;   
     z-index: -1;
 }
@@ -220,7 +223,7 @@ input:focus{outline:2px solid rgb(127, 123, 123);border-radius:10px; box-shadow:
     margin-left:2vw ;
     margin-bottom:-5vh;
     font-weight: bold; 
-    /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     transition: all 2s ease; 
     color:black
     
