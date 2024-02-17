@@ -19,14 +19,14 @@ This project is a web application that allows users to search for movies, view m
 **File Structure**
 
 ├── index.html             # HTML file for the homepage
-├── movie-information.html # HTML file for displaying movie details
+├── movieInformation.html # HTML file for displaying movie details
 ├── favourite.html         # HTML file for displaying favorite movies
 ├── src                    # Folder containing media files
 │   ├── logo.png          # Logo image file
 │   └── samplePoster.jpg  # Sample poster image file
 ├── js                     # Folder containing JavaScript files
 │   ├── main.js            # JavaScript file for main functionalities
-│   ├── movie-info.js      # JavaScript file for movie information
+│   ├── moviesinfo.js      # JavaScript file for movie information
 │   └── fav.js             # JavaScript file for managing favorites
 └── css                    # Folder containing CSS files
     └── style.css          # CSS file for styling
@@ -40,7 +40,7 @@ git clone https://github.com/your-username/imdb-movie-search.git
 2. Open index.html in your web browser to start using the application.
 
 
-Usage
+**Usage**
 1. Search for a movie by entering its title in the search bar on the homepage.
 2. Click on a movie from the search results to view detailed information.
 3. Click the heart icon to add the movie to your favorites list.

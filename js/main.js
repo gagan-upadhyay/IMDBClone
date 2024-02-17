@@ -83,7 +83,7 @@ function Suggestionsdisplay(suggestions){
             console.log(MovieDetailsObj);
         //using local storage to store movie details object
             localStorage.setItem('movieInfo', JSON.stringify(MovieDetailsObj));
-            window.location.href='movie-Information.html';
+            window.location.href='movieInformation.html';
 
         });
 

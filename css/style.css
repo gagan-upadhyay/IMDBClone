@@ -2,6 +2,9 @@ body{
     padding: 0;
     margin: 0;
     background-color: black;
+    background-image: "src/movietheatre.jpg";
+    overflow: hidden;
+    scrollbar-width: none;
 
 }
 
@@ -9,11 +12,22 @@ body{
     display: flex;
 }
 
-img{
+#imdblogo{
     margin: 2vh;
     height:10vh;
     width: 6vw;
 }
+
+.movietheatre img{
+    position:relative;   
+    margin-left: 30vw; 
+    width:43vw; 
+    user-select: none;   
+    z-index: -1;
+}
+
+
+
 
 .nav-bar{
     display: flex;
@@ -72,13 +86,13 @@ input:focus{outline:2px solid rgb(127, 123, 123);border-radius:10px; box-shadow:
 
 #search-list{     
     flex-wrap: wrap;
+    position: absolute;
     flex-flow: column;
     justify-content:flex-start;    
     display:flex;  
     width:63.2vw;           
     margin-left: 23vw;
-    margin-top: -2vh;
-    
+    margin-top: -2vh;    
     background-color: black;
     color:grey;  
 }
