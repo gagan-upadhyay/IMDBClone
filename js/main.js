@@ -42,11 +42,7 @@ function Suggestionsdisplay(suggestions){
         const posterImg = document.createElement('img');
         
         //handling the issue if poster is a=unavailable by using a custom poster
-        if (suggestion.Poster!=='N/A'){
-        posterImg.src = suggestion.Poster;
-        }else{
-            posterImg.src = 'samplePoster.jpg';
-            }
+        posterImg.src = suggestion.Poster !== 'N/A' ? suggestion.Poster : 'src/samplePoster.jpg';
         posterImg.alt = suggestion.Title;
 
         // Append the poster image to the suggestion link

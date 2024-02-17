@@ -85,11 +85,9 @@ function displaysearched(movieInfo) {
     metacriticElement.textContent = `Metacritics Ratings: ${MetacriticRating}`;
 
         //if movie poster is not available a predefined poster is used.
-    if(movieInfo.Poster!=='N/A'){
-        posterImage.src = movieInfo.Poster;
-    }else{
-        posterImage.src = 'samplePoster.jpg';
-    }
+
+
+    posterImage.src = movieInfo.Poster !== 'N/A' ? movieInfo.Poster : 'src/samplePoster.jpg';
     posterImage.alt = movieInfo.Title;
 
 
@@ -122,9 +120,7 @@ function displaysearched(movieInfo) {
             favourites.push(movieInfo);
             console.log("Movie "+ movieInfo.Title + " is added to favorites");
             favBtn.classList.remove('fa-regular');
-            favBtn.classList.add('fa-solid');
-
-            // localStorage.setItem('favoriteArray', JSON.stringify('favoriteArray'));
+            favBtn.classList.add('fa-solid');          
         }else{
             // Check if movieInfo is already in favoriteArray
             const index = favourites.findIndex(movie => JSON.stringify(movie) === JSON.stringify(movieInfo));

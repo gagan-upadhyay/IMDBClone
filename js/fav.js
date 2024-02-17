@@ -24,7 +24,7 @@ if (favArray && favArray.length > 0) {
 
         movieElement.innerHTML = `            
             <div class='poster-image'>
-                <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'samplePoster.jpg'}" alt="Movie Poster">                
+                <img src="${movie.Poster !== 'N/A' ? movie.Poster : '/src/samplePoster.jpg'}" alt="Movie Poster">                
             </div>            
             <div class='movie-info'>
                 <div>
@@ -56,8 +56,3 @@ else {
         `
         favMovieElement.appendChild(movieElement);
     }
-
-
-
-
-
